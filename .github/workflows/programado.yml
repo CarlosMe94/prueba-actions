@@ -1,0 +1,12 @@
+name: Programado
+
+on:
+    schedule:
+        - cron: "15 13 * * THU"
+
+jobs:
+    schedule:
+        runs-on: ubuntu-24.04
+        steps:
+            - name: Saludar
+              run: echo "Hola desde GitHub Actions!, es jueves y 13:15"

@@ -1,0 +1,14 @@
+name: hola
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    hola:
+        runs-on: ubuntu-24.04
+        steps:
+            - name: Saludo
+              run: echo "Hola desde actions y ubuntu"
+            - name: Fecha
+              run: date

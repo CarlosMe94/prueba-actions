@@ -16,4 +16,4 @@ jobs:
                   echo "Event: ${{ github.event_name }}"
                   echo "Issue: ${{ github.event.issue.number }}"
                   echo "Issue title: ${{ github.event.issue.title }}"
-                  echo "Issue comment: ${{ github.event.issue.comments }}"
+                  echo "Issue comment: ${{ github.event.comment.body }}"

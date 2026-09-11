@@ -1,0 +1,19 @@
+name: Respuesta auto
+
+on:
+    issues:
+
+jobs:
+    inspect-event:
+        runs-on: ubuntu-24.04
+        permissions:
+            issues: write
+
+        steps:
+          - name: Comentar como bot en GitHub Actions
+            if: github.event_name == 'issues' && github.event.action == 'opened'
+            env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  ISSUE_NUMBER: ${{ github.event.issue.number }}
+                  GITHUB_REPOSITORY: ${{ github.repository }}
+            run: gh issue comment "$ISSUE_NUMBER" --body "Gracias por la informacion, pronto actulizaremos" --repo "$GITHUB_REPOSITORY"

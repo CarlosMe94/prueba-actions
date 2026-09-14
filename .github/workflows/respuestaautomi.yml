@@ -13,7 +13,7 @@ jobs:
             - name: Comentar como autor del repositorio
               if: github.event_name == 'issues' && github.event.action == 'opened'
               env:
-                  AUTHOR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  AUTHOR_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
               run: |
                   if [[ -z "$AUTHOR_TOKEN" ]]; then
